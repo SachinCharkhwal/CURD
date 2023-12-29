@@ -1,0 +1,14 @@
+.page
+{
+    margin-top: 40px !important;
+}
+
+.reg{
+    width: 600px;
+}
+
+@media(max-width:600px) {
+    .reg{
+        width: 100%;
+    }
+}
