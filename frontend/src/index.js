@@ -30,6 +30,7 @@ root.render(
           <Route path='footer' element={<MyFooter/> } />
           <Route path='dashboard/userdetail/:id' element={<DetailsPage/> } />
           <Route path='dashboard/update/:id' element={<MyUpdate/>} />
+          <Route path='login' element={<MyLogin/>} />
           
         </Routes>
     </BrowserRouter>

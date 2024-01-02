@@ -70,24 +70,20 @@ rout.patch("/updateuser/:id", async (req, res) => {
 
 
 //login api.................................................................................................
-rout.post("/login", async (req, res) => {
-    console.log(req.body);
-    const { email, pass } = req.body;
-
-    if (!email || !pass) {
-        return res.status(422).json({ error: "user email and password do not matched" });
-
+rout.patch('/login', async(req, res)=>{
+    const {email, pass } = req.body
+    if(!email || !pass){
+        return res.status(422).json({error : 'user name and password not matched'})
     }
-    else {
-        const userValidation = await mySchema.findOne({ email: email });
-        console.log(userValidation);
-        if (userValidation.email === email && userValidation.pass === pass) {
-            res.status(200).json({ message: 'welcome to login', status: 201 });
+    else{
+        const userAuthentication = await mySchema.fineOne({ email : email })
+        if(userAuthentication.email === email && userAuthentication.pass === pass){
+            res.status(200).json({status:201 , message: 'welcome to login'})
         }
-        else {
-            res.status(250).json({ error: "password not match" });
+        else{
+            res.status(250).json({error : 'password not matched'})
         }
     }
-});
+})
 
 module.exports = rout;

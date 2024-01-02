@@ -81,8 +81,8 @@ const MyRegisterUser = async () => {
         </div>
         <div className='col-12 mt-4 text-center'>
           <button className='btn btn-success col-12' onClick={MyRegisterUser}>Register</button>
-          <button className='btn btn-danger col-12 mt-4'>Cancel</button>
-          <Link className='btn col-12 mt-4 border' to="/dashboard">Dashboard</Link>
+          <Link className='btn btn-danger col-12 mt-4' to="/login">Cancel</Link>
+          {/* <Link className='btn col-12 mt-4 border' to="/dashboard">Dashboard</Link> */}
         </div>
       </div>
     </div>
